@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Custom Referrer Receiver</string>
-    <string name="hello_world">Please use \"adb shell\" to send a broadcast Intent</string>
+    <string name="hello_world">Please use \"adb shell\" to send a broadcast Intent as explained in the README. Then check the LogCat!</string>
     <string name="title_activity_main">Custom Referrer Receiver</string>
 
 </resources>

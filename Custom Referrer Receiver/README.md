@@ -1,14 +1,9 @@
-Android Samples
-===============
-
-A list of sample projects for Android.
-
 Custom Referrer Receiver
 ------------------------
 
 ### Problem
 
-We want to pre-configure some elements of our app based on an installation link the user clicked.
+We want to pre-configure some elements of our app based on an installation link the user clicked (i.e. from a website).
 
 ### Example
 
@@ -18,12 +13,12 @@ Alice installs our news-reader app from website X. The news-feed of website X wi
 
 This project shows how to add an optional parameter to the Android referrer URL. We will parse the referrer sent to our app by the Google Play Store upon an installation, read our optional parameter to pre-configure the app, and forward the referrer to Google Analytics for further tracking.
 
-Example of URLs to use for redirecting your users to Google Play Store:
+Example of URLs to use for redirecting our users to the Google Play Store:
 
 * https://play.google.com/store/apps/details?id=com.example.android&referrer=utm_source%3DYourAppName%26utm_medium%3DYourMedium%26utm_campaign%3DYourCampaign%26utm_content%3DYourSampleContent
 * market://details??id=com.example.android&referrer=utm_source%3DYourAppName%26utm_medium%3DYourMedium%26utm_campaign%3DYourCampaign%26utm_content%3DYourSampleContent
 
-Note: we will use the optional parameter "utm_content" to add our payload. We will use it in our app for the pre-configuration!
+Note: we will use the optional parameter "utm_content" to add our payload.
 
 To simulate the Intent sent to our app by the Google Play Store, please do the following from a console:
 
@@ -32,3 +27,5 @@ adb shell
 
 2) Send the broadcast to our app:
 am broadcast -a com.android.vending.INSTALL_REFERRER -n com.example.android.custom.referrer.receiver/.ReferrerReceiver --es "referrer" "utm_source=YourAppName&utm_medium=YourMedium&utm_campaign=YourCampaign&utm_content=YourSampleContent"
+
+Note: replace "YourSampleContent" with some more meaningful value for your app, like the ID of a product, plugin, etc.

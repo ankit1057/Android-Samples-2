@@ -8,7 +8,9 @@ import android.util.Log;
 
 /**
  * To test a referrer broadcast from ADB:
+ * 
  * adb shell
+ * 
  * am broadcast -a com.android.vending.INSTALL_REFERRER -n com.example.android.custom.referrer.receiver/.ReferrerReceiver --es "referrer" "utm_source=YourAppName&utm_medium=YourMedium&utm_campaign=YourCampaign&utm_content=YourSampleContent"
  */
 public class ReferrerReceiver extends BroadcastReceiver {
@@ -28,8 +30,7 @@ public class ReferrerReceiver extends BroadcastReceiver {
                         final String content = p.substring("utm_content=".length());
                         
                         /**
-                         * USE HERE YOUR CONTENT:
-                         * - configure the app based on the link the user clicked
+                         * USE HERE YOUR CONTENT (i.e. configure the app based on the link the user clicked)
                          */
                         Log.i("ReferrerReceiver", content);
                         
@@ -40,7 +41,9 @@ public class ReferrerReceiver extends BroadcastReceiver {
                 e.printStackTrace();
             }
 
-            // OPTIONAL: Forward intent to Google Analytics V2 receiver
+            /**
+             * OPTIONAL: Forward the intent to Google Analytics V2 receiver
+             */
             // new com.google.analytics.tracking.android.AnalyticsReceiver().onReceive(context, intent);
         }
         
