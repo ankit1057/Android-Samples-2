@@ -16,6 +16,7 @@ This project shows how to add an optional parameter to the Android referrer URL.
 Example of URLs to use for redirecting our users to the Google Play Store:
 
 	https://play.google.com/store/apps/details?id=com.example.android&referrer=utm_source%3DYourAppName%26utm_medium%3DYourMedium%26utm_campaign%3DYourCampaign%26utm_content%3DYourSampleContent
+
 	market://details??id=com.example.android&referrer=utm_source%3DYourAppName%26utm_medium%3DYourMedium%26utm_campaign%3DYourCampaign%26utm_content%3DYourSampleContent
 
 **Note**: we are using the optional parameter "utm_content" to add our payload.
